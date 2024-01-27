@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+    <head>
+        <title> hevvv</title> 
+        <link rel="stylesheet" href="{ static/css/task.css }">
+    </head>
+    <body >
+        {%  for i in task %}
+        <p> {{ for.loop.counter}}.{{i.name}}&nbsp;&nbsp;&nbsp;{{i.time}}</p>
+        <hr>
+        {% endfor %}
+
+    </body>
+</html>

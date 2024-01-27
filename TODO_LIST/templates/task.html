@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+    <head>
+        <title> Page Information</title>
+        <link rel="stylesheet" href="{% static 'css/task.css' %}">
+        <script src="{% static 'js/main.js' %}"></script>   
+    </head>
+
+    <body bgcolor="C4EE15">
+        {% include 'header.html' %}
+       
+        <table>
+            <tr>
+                <th> Name</th>
+                <th> Time</th>
+                <th> Edit</th>
+                <th> Delete</th>
+            </tr>
+
+            {% for i in task %}
+            <tr>
+                <td> {{i.name}} </td>
+                <td> {{i.time}} </td>
+                <td> <a href="/edit/{{i.id}}">Edit</a></td>
+                <td><a href="/delete/{{i.id}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table> 
+ 
+        {% for i in task %}
+        <!--<p>{{ forloop.counter}}.{{i.name}}&nbsp;&nbsp;&nbsp;{{i.time}} </p> -->
+        <hr>
+        {% endfor %}
+      <button onclick="greet()">CLICK HERE</button><br> <br>
+
+        <!-- <a href='/add'><button type="button">Add Item</button></a>-->
+        <form action="/add">
+            <input type="submit" value="NEW TASK">
+        </form>
+        {% include 'footer.html' %}
+    </body>
+</html> </html>

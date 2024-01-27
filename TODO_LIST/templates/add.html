@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>heyy</title>
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <form method="POST"action="">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>
+                        <input type="text"name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Time:</td>
+                    <td>
+                        <input type="text"name="time">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit"value="Add_task">          
+                    </td>
+                </tr>
+            </table>
+            {% include 'footer.html' %}
+        </form>
+
+    </body>
+</html>

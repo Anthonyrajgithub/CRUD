@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    </head>
+<body>
+    {% include 'header.html' %}
+    <center>
+    {% for i in task %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" name="name" value="{{i.name}}">
+                </td>
+            </tr>
+            <tr>
+                <td>Time:</td>
+                <td>
+                    <input type="text" name="time" value="{{i.time}}">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="UPDATE TASK">
+                </td>
+            </tr>
+        </table>
+    </form>
+    {% endfor %}
+    </center>
+    {% include 'footer.html' %}
+</body>
+</html></html>
